@@ -8,13 +8,36 @@
   </head>
   <body>
     <script>
-      const i = 6.9;
-      let s = parseInt(prompt("nhap so tien gui"));
-      let y = parseInt(prompt("nhap so nam gui"));
-      let a = (s * i) / 100;
+      const ONE_HUNDRED_PERCENT = 100;
+      let bankName = prompt("Nhap ten ngan hang:");
+      let bankPercent = prompt("Nhap lai suat:");
 
-      let t = s + y * a;
-      document.write(`tong so tien nhan duoc la : ${t} vnd`);
+      let year = prompt("Nhap so nam:");
+      let money = prompt("Nhap so tien:");
+
+      let moneyInOneYear = money * (bankPercent / ONE_HUNDRED_PERCENT);
+
+      let interestMoney = year * moneyInOneYear;
+
+      let total = Number(money) + Number(interestMoney);
+
+      let message = `
+      <h1>Ung Dung Tinh Lai suat cua ngan hang: ${bankName}</h1>
+      <pre>
+        Tien gui: ${money}
+        
+       So Nam Gui: ${year}
+
+      Lai suat:${bankPercent} %
+
+       Sau ${year} nam tien lai: ${interestMoney}
+
+      So tien goc va lai sau ${year} nam: ${total}
+
+       </pre>
+     `;
+
+      document.write(message);
     </script>
   </body>
 </html>
